@@ -1,0 +1,12 @@
+{
+  "dataset": "synthetic_with_noise",
+  "n_samples": 200,
+  "n_features": 10,
+  "n_classes": 3,
+  "true_noise": 33,
+  "true_noise_rate": 0.165,
+  "detected_label_errors": 116,
+  "detected_error_rate": 0.58,
+  "avg_confidence": 0.4444822175041074,
+  "analysis_timestamp": "2026-01-31T16:56:22.258966"
+}

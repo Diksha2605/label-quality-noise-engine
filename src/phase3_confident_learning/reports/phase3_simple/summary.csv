@@ -1,0 +1,2 @@
+dataset,n_samples,n_classes,label_errors_found,label_error_rate,avg_label_quality,median_label_quality
+synthetic_with_noise,300,3,156,0.52,0.47810765995177823,0.47648369637245863

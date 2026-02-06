@@ -1,0 +1,28 @@
+project:
+  name: LQNE
+  version: 1.0
+  environment: local
+
+output:
+  base_dir: reports
+
+data:
+  base_dir: data
+
+datasets:
+  default: bank_marketing
+  adult:
+    target_column: income
+  bank_marketing:
+    target_column: y
+
+thresholds:
+  low_trust: 0.3
+  high_noise: 0.2
+
+trust:
+  low_threshold: 0.3
+
+reporting:
+  save_csv: true
+  save_json: true
