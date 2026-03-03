@@ -1,33 +1,47 @@
 import numpy as np
-import pandas as pd
 
 
-class SyntheticNoiseInjector:
+def inject_label_noise(X, y, noise_rate=0.1, random_state=42):
     """
-    Injects controlled synthetic label noise.
+    Inject synthetic label noise
+
+    Parameters:
+    X : Features
+    y : Labels
+    noise_rate : percentage of labels flipped
+
+    Returns:
+    X
+    y_noisy
+    noisy_indices
     """
 
-    def inject_random_noise(
-        self,
-        df: pd.DataFrame,
-        label_col: str,
-        noise_rate: float = 0.2,
-        seed: int = 42,
-    ) -> pd.DataFrame:
-        np.random.seed(seed)
-        df = df.copy()
+    np.random.seed(random_state)
 
-        n = len(df)
-        noisy_count = int(noise_rate * n)
-        noisy_idx = np.random.choice(df.index, noisy_count, replace=False)
+    y_noisy = y.copy()
 
-        df["is_noisy_true"] = 0
-        df.loc[noisy_idx, "is_noisy_true"] = 1
+    n_samples = len(y)
 
-        labels = df[label_col].unique()
+    n_noisy = int(noise_rate * n_samples)
 
-        for idx in noisy_idx:
-            current = df.at[idx, label_col]
-            df.at[idx, label_col] = np.random.choice(labels[labels != current])
+    noisy_indices = np.random.choice(
+        n_samples,
+        n_noisy,
+        replace=False
+    )
 
-        return df
+    classes = np.unique(y)
+
+    for idx in noisy_indices:
+
+        current_label = y[idx]
+
+        other_labels = classes[
+            classes != current_label
+        ]
+
+        new_label = np.random.choice(other_labels)
+
+        y_noisy[idx] = new_label
+
+    return X, y_noisy, noisy_indices
