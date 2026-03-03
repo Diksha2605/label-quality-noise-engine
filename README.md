@@ -184,7 +184,7 @@ Synthetic Noise Experiments
 
 Clone repository:
 
-git clone https://github.com/YOUR_USERNAME/LQNE_Project.git
+git clone https://github.com/Diksha2605/LQNE_Project.git
 
 
 Install dependencies:
@@ -237,24 +237,15 @@ Accuracy after cleaning: Improved
 
 ----------------------------------------------------
 
-## Research Contribution
-
-This project demonstrates a practical approach to:
-
-- Dataset Quality Engineering
-- Label Noise Detection
-- Robust Machine Learning Pipelines
-
-The system simulates real-world data science problems.
-
-
-----------------------------------------------------
-
 ## Author
 
 Diksha Singh
 
-Machine Learning Student
+GitHub:
+https://github.com/Diksha2605
+
+LinkedIn:
+https://www.linkedin.com/in/diksha-singh30/
 
 
 ----------------------------------------------------
